@@ -6,8 +6,7 @@ class Tasks extends StatefulWidget {
   final String foto;
   final int dificuldade;
 
-  Tasks(this.nome, this.foto, this.dificuldade, {Key? key})
-      : super(key: key);
+  Tasks(this.nome, this.foto, this.dificuldade, {Key? key}) : super(key: key);
 
   int level = 0;
 
@@ -16,8 +15,6 @@ class Tasks extends StatefulWidget {
 }
 
 class _TasksState extends State<Tasks> {
-
-
   bool assetOrNetwotk() {
     return widget.foto.contains('http') ? false : true;
   }
@@ -95,15 +92,13 @@ class _TasksState extends State<Tasks> {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(16.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: Container(
                           height: 52,
-                          width: 72,
+                          width: 90,
                           child: ElevatedButton(
                             onPressed: levelUp,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.end,
+                            child: Row(
                               children: const [
                                 Icon(Icons.arrow_drop_up),
                                 Text(
@@ -139,7 +134,8 @@ class _TasksState extends State<Tasks> {
                       padding: const EdgeInsets.all(12.0),
                       child: Text(
                         'Nivel: ${widget.level}',
-                        style: const TextStyle(color: Colors.white, fontSize: 16),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
                       ),
                     ),
                   ],
